@@ -14,3 +14,5 @@ public class Persona {
         this.estatura = estatura;
         this.peso = peso;
     }
+
+    public void mostrarInfo() {
