@@ -7,3 +7,10 @@ public class Persona {
     protected double peso;
 
     public Persona(String nombre, String apellido, String fechaNacimiento, String genero, double estatura, double peso) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fechaNacimiento = fechaNacimiento;
+        this.genero = genero;
+        this.estatura = estatura;
+        this.peso = peso;
+    }
