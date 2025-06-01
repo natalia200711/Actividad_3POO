@@ -23,3 +23,10 @@ public class Profesor extends Persona {
         listaProfesores[contador] = p;
         contador++;
     }
+
+    public static void mostrarTodos() {
+        for (int i = 0; i < contador; i++) {
+            listaProfesores[i].mostrarInfo();
+        }
+    }
+}
