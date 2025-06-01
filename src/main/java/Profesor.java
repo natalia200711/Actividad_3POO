@@ -8,3 +8,5 @@ public class Profesor extends Persona {
         this.especialidad = especialidad;
         this.titulo = titulo;
     }
+
+    @Override
