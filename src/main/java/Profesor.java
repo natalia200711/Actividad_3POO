@@ -15,4 +15,6 @@ public class Profesor extends Persona {
         System.out.println("Especialidad: " + especialidad);
         System.out.println("Título: " + titulo);
     }
-}
+
+    private static Profesor[] listaProfesores = new Profesor[50];
+    private static int contador = 0;
