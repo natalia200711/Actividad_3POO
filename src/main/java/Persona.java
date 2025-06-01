@@ -16,3 +16,10 @@ public class Persona {
     }
 
     public void mostrarInfo() {
+        System.out.println("Nombre: " + nombre + " " + apellido);
+        System.out.println("Fecha de nacimiento: " + fechaNacimiento);
+        System.out.println("Género: " + genero);
+        System.out.println("Estatura: " + estatura + " m");
+        System.out.println("Peso: " + peso + " kg");
+    }
+}
