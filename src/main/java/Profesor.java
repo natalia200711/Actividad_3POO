@@ -18,3 +18,8 @@ public class Profesor extends Persona {
 
     private static Profesor[] listaProfesores = new Profesor[50];
     private static int contador = 0;
+
+    public static void agregarProfesor(Profesor p) {
+        listaProfesores[contador] = p;
+        contador++;
+    }
