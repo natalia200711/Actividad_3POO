@@ -4,3 +4,4 @@ public class Profesor extends Persona {
 
     public Profesor(String nombre, String apellido, String fechaNacimiento, String genero, double estatura, double peso,
                     String especialidad, String titulo) {
+        super(nombre, apellido, fechaNacimiento, genero, estatura, peso); // llamada al constructor de la clase padre
