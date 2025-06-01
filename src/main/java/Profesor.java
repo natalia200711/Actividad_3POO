@@ -12,3 +12,7 @@ public class Profesor extends Persona {
     @Override
     public void mostrarInfo() {
         super.mostrarInfo(); // llamada a método de la clase padre
+        System.out.println("Especialidad: " + especialidad);
+        System.out.println("Título: " + titulo);
+    }
+}
