@@ -10,3 +10,4 @@ public class Profesor extends Persona {
     }
 
     @Override
+    public void mostrarInfo() {
