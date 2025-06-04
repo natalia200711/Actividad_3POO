@@ -34,3 +34,8 @@ public class Profesor extends Persona {
         }
     }
 }
+
+public void guardarEnBD(Connection connection) {
+    String sql = "INSERT INTO profesores (nombre, apellido, fechaNacimiento, genero, estatura, peso, especialidad, titulo) " +
+            "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    try (PreparedStatement stmt = connection.prepareStatement(sql)) {
