@@ -47,3 +47,8 @@ public void guardarEnBD(Connection connection) {
         stmt.setDouble(6, peso);
         stmt.setString(7, especialidad);
         stmt.setString(8, titulo);
+        stmt.executeUpdate();
+    } catch (SQLException e) {
+        System.err.println("Error al guardar el profesor en la base de datos: " + e.getMessage());
+    }
+}
