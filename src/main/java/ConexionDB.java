@@ -13,10 +13,17 @@ public class ConexionDB {
             Class.forName("com.mysql.cj.jdbc.Driver");
             return DriverManager.getConnection(URL, USER, PASSWORD);
         } catch (ClassNotFoundException e) {
-            throw new SQLException("🚨 No se encontró el driver de MySQL", e);
+            throw new SQLException("No se encontró el driver de MySQL", e);
         }
     }
 
     public static void main(String[] args) {
         try (Connection connection = getConnection()) {
-            System.out.println("✅ ¡Conexión exitosa a la base de datos!");
+            System.out.println("¡Conexión exitosa a la base de datos!");
+        } catch (SQLException e) {
+            System.err.println(" Error al conectar a la base de datos: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+}
+
