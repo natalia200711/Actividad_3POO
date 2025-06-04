@@ -52,3 +52,9 @@ public void guardarEnBD(Connection connection) {
         System.err.println("Error al guardar el profesor en la base de datos: " + e.getMessage());
     }
 }
+
+public static void guardarTodosEnBD() {
+    try (Connection connection = ConexionDB.getConnection()) {
+        for (int i = 0; i < contador; i++) {
+            listaProfesores[i].guardarEnBD(connection);
+        }
