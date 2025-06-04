@@ -20,8 +20,12 @@ public class Profesor extends Persona {
     private static int contador = 0;
 
     public static void agregarProfesor(Profesor p) {
-        listaProfesores[contador] = p;
-        contador++;
+        if (contador < listaProfesores.length) {
+            listaProfesores[contador] = p;
+            contador++;
+        } else {
+            System.out.println("No se pueden agregar más profesores. Límite alcanzado.");
+        }
     }
 
     public static void mostrarTodos() {
