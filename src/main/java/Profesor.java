@@ -39,3 +39,11 @@ public void guardarEnBD(Connection connection) {
     String sql = "INSERT INTO profesores (nombre, apellido, fechaNacimiento, genero, estatura, peso, especialidad, titulo) " +
             "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+        stmt.setString(1, nombre);
+        stmt.setString(2, apellido);
+        stmt.setString(3, fechaNacimiento);
+        stmt.setString(4, genero);
+        stmt.setDouble(5, estatura);
+        stmt.setDouble(6, peso);
+        stmt.setString(7, especialidad);
+        stmt.setString(8, titulo);
