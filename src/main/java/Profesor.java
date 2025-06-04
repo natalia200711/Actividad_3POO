@@ -58,3 +58,8 @@ public static void guardarTodosEnBD() {
         for (int i = 0; i < contador; i++) {
             listaProfesores[i].guardarEnBD(connection);
         }
+        System.out.println("Todos los profesores fueron guardados en la base de datos.");
+    } catch (SQLException e) {
+        System.err.println("Error al guardar todos los profesores: " + e.getMessage());
+    }
+}
