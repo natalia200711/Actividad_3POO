@@ -39,3 +39,7 @@ public class Main {
 
         // Mostrar todos los profesores
         Profesor.mostrarTodos();
+
+        // Guardar en la base de datos si hay una conexión establecida
+        Connection connection = ConexionDB.getConnection();
+        nuevoProfesor.guardarEnBD(connection);
