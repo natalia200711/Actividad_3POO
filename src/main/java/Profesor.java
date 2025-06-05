@@ -1,3 +1,8 @@
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+// Clase Profesor que hereda de Persona y maneja la información de los profesores
 public class Profesor extends Persona {
     private String especialidad;
     private String titulo;
