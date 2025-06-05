@@ -23,3 +23,5 @@ public class Main {
 
         System.out.println("Ingrese el peso del profesor (en kilogramos):");
         double peso = scanner.nextDouble();
+
+        scanner.nextLine(); // Consumir el salto de línea
