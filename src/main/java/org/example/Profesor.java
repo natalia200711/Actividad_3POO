@@ -1,3 +1,5 @@
+package org.example;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -38,33 +40,34 @@ public class Profesor extends Persona {
             listaProfesores[i].mostrarInfo();
         }
     }
-}
 
-public void guardarEnBD(Connection connection) {
-    String sql = "INSERT INTO profesores (nombre, apellido, fechaNacimiento, genero, estatura, peso, especialidad, titulo) " +
-            "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-    try (PreparedStatement stmt = connection.prepareStatement(sql)) {
-        stmt.setString(1, nombre);
-        stmt.setString(2, apellido);
-        stmt.setString(3, fechaNacimiento);
-        stmt.setString(4, genero);
-        stmt.setDouble(5, estatura);
-        stmt.setDouble(6, peso);
-        stmt.setString(7, especialidad);
-        stmt.setString(8, titulo);
-        stmt.executeUpdate();
-    } catch (SQLException e) {
-        System.err.println("Error al guardar el profesor en la base de datos: " + e.getMessage());
-    }
-}
 
-public static void guardarTodosEnBD() {
-    try (Connection connection = ConexionDB.getConnection()) {
-        for (int i = 0; i < contador; i++) {
-            listaProfesores[i].guardarEnBD(connection);
+    public void guardarEnBD(Connection connection) {
+        String sql = "INSERT INTO profesores (nombre, apellido, fechaNacimiento, genero, estatura, peso, especialidad, titulo) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setString(1, nombre);
+            stmt.setString(2, apellido);
+            stmt.setString(3, fechaNacimiento);
+            stmt.setString(4, genero);
+            stmt.setDouble(5, estatura);
+            stmt.setDouble(6, peso);
+            stmt.setString(7, especialidad);
+            stmt.setString(8, titulo);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            System.err.println("Error al guardar el profesor en la base de datos: " + e.getMessage());
         }
-        System.out.println("Todos los profesores fueron guardados en la base de datos.");
-    } catch (SQLException e) {
-        System.err.println("Error al guardar todos los profesores: " + e.getMessage());
+    }
+
+    public static void guardarTodosEnBD() {
+        try (Connection connection = ConexionDB.getConnection()) {
+            for (int i = 0; i < contador; i++) {
+                listaProfesores[i].guardarEnBD(connection);
+            }
+            System.out.println("Todos los profesores fueron guardados en la base de datos.");
+        } catch (SQLException e) {
+            System.err.println("Error al guardar todos los profesores: " + e.getMessage());
+        }
     }
 }
