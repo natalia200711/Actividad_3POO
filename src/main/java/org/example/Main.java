@@ -33,3 +33,9 @@ public class Main {
         String titulo = scanner.nextLine();
 
         Profesor nuevoProfesor = new Profesor(nombre, apellido, fechaNacimiento, genero, estatura, peso, especialidad, titulo);
+
+        // Agregar el nuevo profesor a la lista
+        Profesor.agregarProfesor(nuevoProfesor);
+
+        // Mostrar todos los profesores
+        Profesor.mostrarTodos();
