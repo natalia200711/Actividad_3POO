@@ -25,3 +25,9 @@ public class Main {
         double peso = scanner.nextDouble();
 
         scanner.nextLine(); // Consumir el salto de línea
+
+        System.out.println("Ingrese la especialidad del profesor:");
+        String especialidad = scanner.nextLine();
+
+        System.out.println("Ingrese el título del profesor:");
+        String titulo = scanner.nextLine();
