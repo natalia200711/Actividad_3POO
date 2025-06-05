@@ -31,3 +31,5 @@ public class Main {
 
         System.out.println("Ingrese el título del profesor:");
         String titulo = scanner.nextLine();
+
+        Profesor nuevoProfesor = new Profesor(nombre, apellido, fechaNacimiento, genero, estatura, peso, especialidad, titulo);
