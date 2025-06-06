@@ -1,9 +1,11 @@
 package org.example;
 
+import java.sql.SQLException;
 import java.util.Scanner;
+import java.sql.Connection;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Ingrese el nombre del profesor:");
