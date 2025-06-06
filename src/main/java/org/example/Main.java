@@ -43,3 +43,7 @@ public class Main {
         // Guardar en la base de datos si hay una conexión establecida
         Connection connection = ConexionDB.getConnection();
         nuevoProfesor.guardarEnBD(connection);
+
+        scanner.close();
+    }
+}
