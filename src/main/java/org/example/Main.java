@@ -6,6 +6,15 @@ import java.sql.Connection;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
+        // Probar la conexión a la base de datos
+        Connection connection = ConexionDB.getConnection();
+        if (connection != null) {
+            System.out.println("Conexión exitosa a la base de datos.");
+        } else {
+            System.out.println("Error al conectar con la base de datos.");
+            return; // Si no hay conexión, termina la ejecución
+        }
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Ingrese el nombre del profesor:");
@@ -21,10 +30,10 @@ public class Main {
         String genero = scanner.nextLine();
 
         System.out.println("Ingrese la estatura del profesor (en metros):");
-        double estatura = scanner.nextDouble();
+        double estatura = Double.parseDouble(scanner.nextLine());
 
         System.out.println("Ingrese el peso del profesor (en kilogramos):");
-        double peso = scanner.nextDouble();
+        double peso = Double.parseDouble(scanner.nextLine());
 
         scanner.nextLine(); // Consumir el salto de línea
 
@@ -43,7 +52,6 @@ public class Main {
         Profesor.mostrarTodos();
 
         // Guardar en la base de datos si hay una conexión establecida
-        Connection connection = ConexionDB.getConnection();
         nuevoProfesor.guardarEnBD(connection);
 
         scanner.close();
